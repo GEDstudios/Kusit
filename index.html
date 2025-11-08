@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Full‑Page Image</title>
+  <style>
+    /* Reset and layout */
+    html, body { height: 100%; }
+    body {
+      margin: 0;
+      background: #000;            /* letterbox color when aspect ratios differ */
+      display: grid;               /* centers the image nicely */
+      place-items: center;
+    }
+
+    /* Make the image fit the page without cropping (preserve aspect ratio) */
+    img.fullpage {
+      width: 100vw;                /* span full viewport width */
+      height: 100vh;               /* span full viewport height */
+      object-fit: contain;         /* no cropping; may show letterboxing */
+      user-select: none;
+      -webkit-user-drag: none;
+      display: block;
+    }
+
+    /*
+      Want full-bleed (may crop)?
+      Change object-fit to 'cover' below:
+        object-fit: cover;
+    */
+  </style>
+</head>
+<body>
+  <img class="fullpage" src="./image.png" alt="" />
+</body>
+</html>
