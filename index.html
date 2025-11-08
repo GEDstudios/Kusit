@@ -11,7 +11,7 @@
       margin: 0;
       background: #000;            /* letterbox color when aspect ratios differ */
       display: grid;               /* centers the image nicely */
-      place-items: center;
+      place-items: start center; /* top aligned, centered horizontally */
     }
 
     /* Make the image fit the page without cropping (preserve aspect ratio) */
@@ -19,6 +19,7 @@
       width: 100vw;                /* span full viewport width */
       height: 100vh;               /* span full viewport height */
       object-fit: contain;         /* no cropping; may show letterboxing */
+      object-position: top center; /* pin image to the top */
       user-select: none;
       -webkit-user-drag: none;
       display: block;
