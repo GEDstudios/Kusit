@@ -1,44 +1,49 @@
 <!DOCTYPE html>
-<html lang="he" dir="rtl">
+<html lang="he">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Centered Text</title>
-    
+    <title>אמא'שך</title>
     <style>
-        /* Reset default margin and padding */
+        /* Basic reset and page setup */
         html, body {
-            height: 100%; /* Make HTML and body fill the full viewport height */
+            height: 100%;
             margin: 0;
             padding: 0;
-            font-family: Arial, sans-serif; /* Optional: set a base font */
+            background-color: #000000; /* Black background */
+            color: #ffffff; /* White text */
+            font-family: Arial, Helvetica, sans-serif;
+            direction: rtl; /* Set text direction to right-to-left for Hebrew */
+            overflow: hidden; /* Hide scrollbars */
         }
 
+        /* Flexbox container to center the content */
         body {
-            /* Use Flexbox to center content */
             display: flex;
-            
-            /* Center horizontally */
-            justify-content: center;
-            
-            /* Center vertically */
             align-items: center;
+            justify-content: center;
+            text-align: center;
         }
 
-        .content {
-            /* Make the text bold */
+        /* The main text element */
+        h1 {
             font-weight: bold;
             
-            /* Optional: Make the text larger to be more visible */
-            font-size: 2.5rem; 
+            /* Use viewport width (vw) for responsive font size.
+              10vw means the text size will be 10% of the viewport's width.
+              'clamp()' ensures the text doesn't get too small on mobile
+              or absurdly large on giant monitors.
+              
+              Format: clamp(MIN_SIZE, RESPONSIVE_SIZE, MAX_SIZE)
+            */
+            font-size: clamp(2.5rem, 15vw, 20rem);
+            
+            /* Add a little padding in case the text wraps on very narrow screens */
+            padding: 1rem;
         }
     </style>
 </head>
 <body>
-
-    <div class="content">
-        אמא'שך
-    </div>
-
+    <h1>אמא'שך</h1>
 </body>
 </html>
