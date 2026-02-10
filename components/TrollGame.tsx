@@ -62,7 +62,7 @@ export const TrollGame: React.FC<TrollGameProps> = ({ activeLevel, onSuccess }) 
   const handleLevel1Tap = () => {
     if (status !== "IDLE") return;
     // Target zone: 40% to 65%
-    if (cursorPos >= 38 && cursorPos <= 67) {
+    if (cursorPos >= 42 && cursorPos <= 56) {
       handleLevelSuccess();
     } else {
       handleFail("FAT FINGERS DETECTED");
@@ -110,8 +110,8 @@ export const TrollGame: React.FC<TrollGameProps> = ({ activeLevel, onSuccess }) 
     <div className="w-full animate-in fade-in duration-500">
       <div className="text-center mb-4 font-mono text-red-300 text-xs">STEP 1: CALIBRATE REFLEXES</div>
       <div className="relative w-full h-16 bg-gray-900 border-2 border-red-500 rounded-lg mb-8 overflow-hidden shadow-[0_0_15px_rgba(255,0,0,0.5)]">
-        <div className="absolute top-0 bottom-0 bg-green-500/50 border-x-2 border-green-400 z-10 left-[40%] w-[25%]">
-           <div className="w-full h-full flex items-center justify-center">
+        <div className="absolute top-0 bottom-0 bg-green-500/50 border-x-2 border-green-400 z-10 left-[42%] w-[15%]">
+          <div className="w-full h-full flex items-center justify-center">
              <span className="text-[10px] text-green-200 font-mono tracking-widest">TARGET</span>
            </div>
         </div>
